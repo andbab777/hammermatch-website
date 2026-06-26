@@ -438,7 +438,7 @@ hr.rule { border: none; border-top: 1px solid var(--light); margin: 0 48px; }
 /* ── Page hero ── */
 .page-hero {
   background: var(--black);
-  padding: 144px 48px 80px;
+  padding: 160px 48px 100px;
   position: relative;
   overflow: hidden;
 }
