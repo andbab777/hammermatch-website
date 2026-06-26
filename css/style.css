@@ -697,6 +697,34 @@ hr.rule { border: none; border-top: 1px solid var(--light); margin: 0 48px; }
 .form-note { font-size: 0.7rem; color: var(--mid); text-align: center; margin-top: 12px; font-weight: 300; }
 .req { color: var(--red); font-size: 0.7rem; }
 
+/* Platform suggestions */
+.platform-suggestions {
+  display: none;
+  position: absolute;
+  top: 100%; left: 0; right: 0;
+  background: var(--white);
+  border: 1px solid var(--light);
+  border-top: none;
+  list-style: none;
+  z-index: 50;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.platform-suggestions.open { display: block; }
+
+.platform-suggestions li {
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  color: var(--black);
+  cursor: pointer;
+  font-weight: 300;
+  transition: background var(--ease);
+}
+
+.platform-suggestions li:hover,
+.platform-suggestions li.active { background: var(--off); }
+
 .success-wrap { display: none; text-align: center; padding: 64px 32px; border: 1px solid var(--light); }
 .success-line { width: 32px; height: 2px; background: var(--red); margin: 0 auto 24px; }
 .success-wrap h3 { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; color: var(--black); margin-bottom: 12px; }

@@ -46,13 +46,9 @@
           <div class="form-grid">
 
             <div class="form-row">
-              <div class="field">
-                <label for="firstName">First Name <span class="req">*</span></label>
-                <input type="text" id="firstName" name="firstName" placeholder="Your first name" required />
-              </div>
-              <div class="field">
-                <label for="lastName">Last Name <span class="req">*</span></label>
-                <input type="text" id="lastName" name="lastName" placeholder="Your last name" required />
+              <div class="field full">
+                <label for="name">Your Name <span class="req">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required />
               </div>
             </div>
 
@@ -92,6 +88,17 @@
             </div>
 
             <div class="form-row">
+              <div class="field">
+                <label for="avgLots">Avg. Lots Per Sale</label>
+                <input type="text" id="avgLots" name="avgLots" placeholder="e.g. 250" />
+              </div>
+              <div class="field">
+                <label for="avgVolume">Avg. Sale Volume</label>
+                <input type="text" id="avgVolume" name="avgVolume" placeholder="e.g. $500,000" />
+              </div>
+            </div>
+
+            <div class="form-row">
               <div class="field full">
                 <label for="buyers">Active Buyer Database Size <span class="req">*</span></label>
                 <select id="buyers" name="buyers" required>
@@ -100,6 +107,7 @@
                   <option>500 – 2,000</option>
                   <option>2,000 – 10,000</option>
                   <option>10,000+</option>
+                  <option>Not sure</option>
                 </select>
               </div>
             </div>
@@ -119,24 +127,17 @@
             </div>
 
             <div class="form-row">
-              <div class="field full">
-                <label for="message">Anything else you'd like us to know?</label>
-                <textarea id="message" name="message" placeholder="Tell us about your upcoming sale, current email setup, or any specific questions…"></textarea>
+              <div class="field full" style="position:relative;">
+                <label for="platforms">What platforms do you currently use?</label>
+                <input type="text" id="platforms" name="platforms" placeholder="e.g. Invaluable, LiveAuctioneers…" autocomplete="off" />
+                <ul class="platform-suggestions" id="platformSuggestions"></ul>
               </div>
             </div>
 
             <div class="form-row">
               <div class="field full">
-                <label for="hear">How did you hear about HammerMatch? <span class="req">*</span></label>
-                <select id="hear" name="hear" required>
-                  <option value="" disabled selected>Select one</option>
-                  <option>Referral from a colleague</option>
-                  <option>Web search</option>
-                  <option>Social media</option>
-                  <option>Industry event</option>
-                  <option>Press or publication</option>
-                  <option>Other</option>
-                </select>
+                <label for="message">Anything else you'd like us to know?</label>
+                <textarea id="message" name="message" placeholder="Tell us about your upcoming sale, current email setup, or any specific questions…"></textarea>
               </div>
             </div>
 

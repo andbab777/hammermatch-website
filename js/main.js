@@ -40,6 +40,47 @@ document.querySelectorAll('.tab').forEach(tab => {
 
 document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => c.classList.toggle('on')));
 
+// Platform autocomplete
+const platformInput = document.getElementById('platforms');
+const suggestionsList = document.getElementById('platformSuggestions');
+const PLATFORMS = ['Invaluable', 'LiveAuctioneers', 'Drouot', 'Bidsquare', 'HiBid', 'Proxibid', 'Bidspirit', 'eBay'];
+
+if (platformInput && suggestionsList) {
+  const getSelected = () => platformInput.value.split(',').map(s => s.trim().toLowerCase());
+
+  const render = (matches) => {
+    suggestionsList.innerHTML = '';
+    if (!matches.length) { suggestionsList.classList.remove('open'); return; }
+    matches.forEach(p => {
+      const li = document.createElement('li');
+      li.textContent = p;
+      li.addEventListener('mousedown', e => {
+        e.preventDefault();
+        const parts = platformInput.value.split(',');
+        parts[parts.length - 1] = ' ' + p;
+        platformInput.value = parts.join(',').replace(/^\s*,/, '').trimStart() + ', ';
+        suggestionsList.classList.remove('open');
+        platformInput.focus();
+      });
+      suggestionsList.appendChild(li);
+    });
+    suggestionsList.classList.add('open');
+  };
+
+  platformInput.addEventListener('input', () => {
+    const parts = platformInput.value.split(',');
+    const current = parts[parts.length - 1].trim().toLowerCase();
+    const selected = getSelected().slice(0, -1);
+    if (!current) { suggestionsList.classList.remove('open'); return; }
+    const matches = PLATFORMS.filter(p =>
+      p.toLowerCase().startsWith(current) && !selected.includes(p.toLowerCase())
+    );
+    render(matches);
+  });
+
+  platformInput.addEventListener('blur', () => suggestionsList.classList.remove('open'));
+}
+
 // Formspree AJAX submission
 const form = document.getElementById('contactForm');
 const successWrap = document.querySelector('.success-wrap');
