@@ -701,16 +701,16 @@ hr.rule { border: none; border-top: 1px solid var(--light); margin: 0 48px; }
 .team-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-top: 40px;
+  gap: 14px;
+  margin-top: 32px;
 }
 
 .team-photo {
   width: 100%;
-  aspect-ratio: 3/4;
+  aspect-ratio: 1/1;
   overflow: hidden;
   background: var(--off);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .team-photo img {
