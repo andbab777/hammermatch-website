@@ -145,6 +145,14 @@ nav.scrolled {
   gap: 40px;
 }
 
+.hero-centered {
+  align-items: center;
+  text-align: center;
+  padding-bottom: 72px;
+}
+
+.hero-centered h1 { max-width: none; margin-bottom: 24px; }
+
 .hero-sub {
   font-size: 0.88rem;
   color: rgba(255,255,255,0.38);
@@ -152,6 +160,8 @@ nav.scrolled {
   line-height: 1.8;
   font-weight: 300;
 }
+
+.hero-centered .hero-sub { margin-bottom: 32px; }
 
 .hero-actions { display: flex; gap: 12px; flex-shrink: 0; }
 
