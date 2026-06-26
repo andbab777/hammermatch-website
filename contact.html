@@ -15,9 +15,9 @@
 
 <nav>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="platform.html">Platform</a></li>
-    <li><a href="contact.html" class="nav-demo">Request a Demo</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/platform">Platform</a></li>
+    <li><a href="/contact" class="nav-demo">Request a Demo</a></li>
   </ul>
   <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
@@ -32,73 +32,63 @@
 
       <!-- Aside -->
       <div class="contact-aside fade">
-        <span class="label label-red">Free Demo</span>
-        <h2>No pitch decks.<br><em>Just results.</em></h2>
-        <p>Tell us about your auction house and upcoming sale. We'll run the matching engine on your data and show you exactly what your buyers would receive — before you commit to anything.</p>
+        <span class="label label-red">We Value</span>
+        <h2>Confidentiality &amp;<br><em>Real Results.</em></h2>
+        <p>Speak to your personal representative today.</p>
 
         <div class="contact-meta">
           <div class="meta-row">
-            <div class="meta-label">Response Time</div>
-            <div class="meta-val">Within one business day</div>
-          </div>
-          <div class="meta-row">
-            <div class="meta-label">Free Demo Includes</div>
-            <div class="meta-val">Live matching on your catalogue, sample email outputs, and performance projections</div>
-          </div>
-          <div class="meta-row">
-            <div class="meta-label">Email</div>
-            <div class="meta-val">hello@hammermatch.com</div>
-          </div>
-          <div class="meta-row">
-            <div class="meta-label">What Happens Next</div>
-            <div class="meta-val">We review your submission → run the demo → you decide. No pressure.</div>
+            <div class="meta-label">Why HammerMatch?</div>
+            <div class="meta-val">We have long term vision.</div>
           </div>
         </div>
       </div>
 
       <!-- Form -->
       <div class="fade">
-        <form id="contactForm">
+        <form id="contactForm" action="https://formspree.io/f/xpwzevrd" method="POST">
+          <input type="hidden" name="_replyto" value="andrii.babii7@gmail.com" />
+          <input type="hidden" name="_subject" value="New HammerMatch Demo Request" />
           <div class="form-grid">
 
             <div class="form-row">
               <div class="field">
-                <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName" placeholder="James" required />
+                <label for="firstName">First Name <span class="req">*</span></label>
+                <input type="text" id="firstName" name="firstName" placeholder="Your first name" required />
               </div>
               <div class="field">
-                <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName" placeholder="Harrison" required />
+                <label for="lastName">Last Name <span class="req">*</span></label>
+                <input type="text" id="lastName" name="lastName" placeholder="Your last name" required />
               </div>
             </div>
 
             <div class="form-row">
               <div class="field">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="james@your-house.com" required />
+                <label for="email">Email Address <span class="req">*</span></label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required />
               </div>
               <div class="field">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" placeholder="+44 20 1234 5678" />
+                <label for="phone">Phone <span class="req">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="Your phone number" required />
               </div>
             </div>
 
             <div class="form-row">
               <div class="field full">
-                <label for="house">Auction House Name</label>
-                <input type="text" id="house" name="house" placeholder="Harrison's Fine Art & Antiques" required />
+                <label for="house">Auction House Name <span class="req">*</span></label>
+                <input type="text" id="house" name="house" placeholder="Your auction house name" required />
               </div>
             </div>
 
             <div class="form-row">
               <div class="field">
-                <label for="location">Location</label>
-                <input type="text" id="location" name="location" placeholder="London, UK" />
+                <label for="location">Location <span class="req">*</span></label>
+                <input type="text" id="location" name="location" placeholder="City, Country" required />
               </div>
               <div class="field">
-                <label for="sales">Sales Per Year</label>
-                <select id="sales" name="sales">
-                  <option value="" disabled selected>Select</option>
+                <label for="sales">Sales Per Year <span class="req">*</span></label>
+                <select id="sales" name="sales" required>
+                  <option value="" disabled selected>Select range</option>
                   <option>1 – 4</option>
                   <option>5 – 10</option>
                   <option>11 – 20</option>
@@ -109,9 +99,9 @@
 
             <div class="form-row">
               <div class="field full">
-                <label for="buyers">Active Buyer Database Size</label>
-                <select id="buyers" name="buyers">
-                  <option value="" disabled selected>Select</option>
+                <label for="buyers">Active Buyer Database Size <span class="req">*</span></label>
+                <select id="buyers" name="buyers" required>
+                  <option value="" disabled selected>Select range</option>
                   <option>Under 500</option>
                   <option>500 – 2,000</option>
                   <option>2,000 – 10,000</option>
@@ -143,9 +133,9 @@
 
             <div class="form-row">
               <div class="field full">
-                <label for="hear">How did you hear about HammerMatch?</label>
-                <select id="hear" name="hear">
-                  <option value="" disabled selected>Select</option>
+                <label for="hear">How did you hear about HammerMatch? <span class="req">*</span></label>
+                <select id="hear" name="hear" required>
+                  <option value="" disabled selected>Select one</option>
                   <option>Referral from a colleague</option>
                   <option>Web search</option>
                   <option>Social media</option>
@@ -178,7 +168,7 @@
 
 <footer>
   <div class="footer-brand">
-    <a href="index.html"><img src="favicon.svg" alt="HammerMatch" style="height:38px;width:38px;display:block;"></a>
+    <a href="/"><img src="favicon.svg" alt="HammerMatch" style="height:38px;width:38px;display:block;"></a>
     <p>Personalised email intelligence for auction houses.<br>Match every buyer to their next acquisition.</p>
   </div>
   <div class="footer-bottom">

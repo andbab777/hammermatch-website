@@ -695,6 +695,7 @@ hr.rule { border: none; border-top: 1px solid var(--light); margin: 0 48px; }
 .form-submit { margin-top: 24px; }
 .form-submit .btn { width: 100%; }
 .form-note { font-size: 0.7rem; color: var(--mid); text-align: center; margin-top: 12px; font-weight: 300; }
+.req { color: var(--red); font-size: 0.7rem; }
 
 .success-wrap { display: none; text-align: center; padding: 64px 32px; border: 1px solid var(--light); }
 .success-line { width: 32px; height: 2px; background: var(--red); margin: 0 auto 24px; }
