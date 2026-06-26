@@ -98,8 +98,8 @@ nav.scrolled {
 
 /* ── Hero ── */
 .hero {
-  height: 100vh;
-  min-height: 640px;
+  height: 72vh;
+  min-height: 480px;
   background: var(--black);
   display: flex;
   flex-direction: column;
