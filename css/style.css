@@ -747,22 +747,43 @@ footer { background: var(--black); padding: 64px 48px 32px; display: flex; flex-
 }
 
 @media (max-width: 768px) {
-  nav { padding: 0 20px; height: 56px; }
+  nav {
+    padding: 0 20px;
+    height: 56px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
   .nav-links { display: none; }
-  .hamburger { display: flex; }
+  .hamburger { display: flex; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); }
+
+  nav.mobile-open {
+    height: 100dvh;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: auto;
+    backdrop-filter: none;
+    background: rgba(13,13,13,0.99) !important;
+    border-bottom-color: transparent !important;
+    padding: 0;
+  }
+
+  nav.mobile-open .hamburger {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    transform: none;
+  }
 
   nav.mobile-open .nav-links {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: 56px; left: 0; right: 0; bottom: 0;
-    background: rgba(13,13,13,0.99);
-    padding: 48px 28px;
-    gap: 8px;
-    z-index: 999;
-    align-items: flex-start;
-    justify-content: flex-start;
-    overflow-y: auto;
+    width: 100%;
+    padding: 80px 28px 48px;
+    gap: 0;
+    list-style: none;
   }
 
   nav.mobile-open .nav-links li { width: 100%; }
@@ -771,17 +792,20 @@ footer { background: var(--black); padding: 64px 48px 32px; display: flex; flex-
     font-size: 1.1rem;
     letter-spacing: 0.1em;
     display: block;
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    color: rgba(255,255,255,0.7);
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    color: rgba(255,255,255,0.65);
   }
 
   nav.mobile-open .nav-links .nav-demo {
-    margin-top: 16px;
+    margin-top: 20px;
     display: block;
     text-align: center;
     padding: 14px 20px !important;
     border-bottom: none !important;
+    border: 1px solid var(--red) !important;
+    background: var(--red) !important;
+    color: var(--white) !important;
   }
 
   .hero { padding: 0 20px 48px; min-height: 360px; }

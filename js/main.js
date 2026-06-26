@@ -8,12 +8,18 @@ if (nav) {
 }
 
 if (hamburger) {
-  hamburger.addEventListener('click', () => nav.classList.toggle('mobile-open'));
+  hamburger.addEventListener('click', () => {
+    const open = nav.classList.toggle('mobile-open');
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
 }
 
 // Close mobile menu when a nav link is tapped
 document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => nav.classList.remove('mobile-open'));
+  a.addEventListener('click', () => {
+    nav.classList.remove('mobile-open');
+    document.body.style.overflow = '';
+  });
 });
 
 const io = new IntersectionObserver((entries) => {
