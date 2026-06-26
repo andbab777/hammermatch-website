@@ -305,6 +305,30 @@ hr.rule { border: none; border-top: 1px solid var(--light); margin: 0 48px; }
 .step p { font-size: 0.84rem; color: var(--mid); line-height: 1.75; font-weight: 300; }
 
 /* ── Split sections ── */
+.features-duo {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 0 56px;
+  align-items: start;
+}
+
+.features-divider {
+  background: var(--light);
+  align-self: stretch;
+}
+
+.feature-col {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
 .split.reverse { direction: rtl; }
 .split.reverse > * { direction: ltr; }
