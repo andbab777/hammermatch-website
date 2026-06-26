@@ -455,49 +455,6 @@ hr.rule { border: none; border-top: 1px solid var(--light); margin: 0 48px; }
 .mock-track { flex: 1; height: 5px; background: var(--off); }
 .mock-fill { height: 100%; background: var(--red); }
 
-/* ── Partner marquee ── */
-.marquee-strip {
-  background: var(--off);
-  border-top: 1px solid var(--light);
-  border-bottom: 1px solid var(--light);
-  padding: 18px 0;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-100%); }
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-}
-
-.marquee-group {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  animation: marquee 32s linear infinite;
-  will-change: transform;
-}
-
-.marquee-item {
-  font-family: var(--serif);
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  color: rgba(13,13,13,0.45);
-  padding: 0 28px;
-  white-space: nowrap;
-}
-
-.marquee-dot {
-  color: var(--red);
-  font-size: 0.7rem;
-  flex-shrink: 0;
-}
 
 /* ── CTA ── */
 .cta-section { background: var(--black); text-align: center; padding: 96px 48px; }
