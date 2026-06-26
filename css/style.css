@@ -32,7 +32,7 @@ nav {
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 48px;
   height: 64px;
   transition: background var(--ease), border-color var(--ease);
@@ -63,7 +63,7 @@ nav.scrolled {
 }
 
 .nav-links a {
-  font-size: 0.67rem;
+  font-size: 0.82rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -75,7 +75,7 @@ nav.scrolled {
 .nav-links a.active { color: var(--white); }
 
 .nav-demo {
-  font-size: 0.62rem !important;
+  font-size: 0.78rem !important;
   padding: 9px 20px;
   border: 1px solid rgba(255,255,255,0.28) !important;
   color: var(--white) !important;
