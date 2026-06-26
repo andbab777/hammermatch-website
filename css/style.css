@@ -149,8 +149,8 @@ nav.scrolled {
   align-items: center;
   text-align: center;
   justify-content: center;
-  padding-top: 64px;
-  padding-bottom: 0;
+  padding-top: 144px;
+  padding-bottom: 80px;
 }
 
 .hero-centered h1 { max-width: none; margin-bottom: 24px; }
