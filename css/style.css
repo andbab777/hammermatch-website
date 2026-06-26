@@ -152,7 +152,7 @@ nav.scrolled {
   align-items: center;
   text-align: center;
   justify-content: center;
-  padding: 160px 48px 100px;
+  padding: 120px 48px 60px;
 }
 
 .hero-centered h1 { max-width: none; margin-bottom: 24px; }
@@ -443,14 +443,20 @@ hr.rule { border: none; border-top: 1px solid var(--light); margin: 0 48px; }
 
 @keyframes marquee {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  to   { transform: translateX(-100%); }
 }
 
 .marquee-track {
-  display: inline-flex;
+  display: flex;
+  width: max-content;
+}
+
+.marquee-group {
+  display: flex;
   align-items: center;
-  gap: 0;
-  animation: marquee 28s linear infinite;
+  flex-shrink: 0;
+  animation: marquee 32s linear infinite;
+  will-change: transform;
 }
 
 .marquee-item {
