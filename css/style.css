@@ -77,13 +77,13 @@ nav.scrolled {
 .nav-demo {
   font-size: 0.78rem !important;
   padding: 9px 20px;
-  border: 1px solid rgba(162,16,19,0.6) !important;
+  border: 1px solid var(--red) !important;
   color: var(--white) !important;
-  background: rgba(162,16,19,0.12) !important;
+  background: var(--red) !important;
   transition: border-color var(--ease), background var(--ease) !important;
 }
 
-.nav-demo:hover { border-color: var(--red) !important; background: rgba(162,16,19,0.28) !important; }
+.nav-demo:hover { background: #891012 !important; border-color: #891012 !important; }
 
 .hamburger {
   display: none;
