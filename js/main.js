@@ -11,6 +11,11 @@ if (hamburger) {
   hamburger.addEventListener('click', () => nav.classList.toggle('mobile-open'));
 }
 
+// Close mobile menu when a nav link is tapped
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => nav.classList.remove('mobile-open'));
+});
+
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
 }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
@@ -29,16 +34,40 @@ document.querySelectorAll('.tab').forEach(tab => {
 
 document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => c.classList.toggle('on')));
 
+// Formspree AJAX submission
 const form = document.getElementById('contactForm');
+const successWrap = document.querySelector('.success-wrap');
 if (form) {
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    form.style.display = 'none';
-    document.querySelector('.success-wrap').style.display = 'block';
+    const btn = form.querySelector('[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    try {
+      const resp = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (resp.ok) {
+        form.style.display = 'none';
+        if (successWrap) successWrap.style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Submit Request';
+        alert('Something went wrong. Please try again or email us directly.');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Submit Request';
+      alert('Network error. Please check your connection and try again.');
+    }
   });
 }
 
-const page = window.location.pathname.split('/').pop() || 'index.html';
+// Active nav link
+const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
 document.querySelectorAll('.nav-links a').forEach(a => {
-  if (a.getAttribute('href') === page) a.classList.add('active');
+  const href = (a.getAttribute('href') || '').replace(/\/$/, '') || '/';
+  if (href === currentPath) a.classList.add('active');
 });
