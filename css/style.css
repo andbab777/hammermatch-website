@@ -699,19 +699,18 @@ hr.rule { border: none; border-top: 1px solid var(--light); margin: 0 48px; }
 
 /* Team grid */
 .team-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
   margin-top: 32px;
-  max-width: 340px;
 }
 
 .team-photo {
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 3/4;
   overflow: hidden;
   background: var(--off);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .team-photo img {
@@ -911,6 +910,8 @@ footer { background: var(--black); padding: 64px 48px 32px; display: flex; flex-
   .step:last-child { border-bottom: none; }
 
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .team-grid { flex-direction: row; }
+  .team-photo { aspect-ratio: 1/1; }
   .form-row { grid-template-columns: 1fr; }
   .diff-grid { grid-template-columns: 1fr; }
 
